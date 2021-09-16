@@ -1,0 +1,28 @@
+@use 'src/styles/vars';
+
+.currencies {
+  background: vars.$lightColor;
+  height: 250px;
+  overflow-y: scroll;
+
+  &__title {
+    color: vars.$mainColor;
+    font-weight: bold;
+    padding: 1.5rem 0.8rem 0.8rem 0.8rem;
+    border-bottom: 1px solid vars.$alternativeColor;
+  }
+
+  &__list {
+
+    .currencie {
+      color: vars.$mainColor;
+      padding: 0.8rem;
+      border-bottom: 1px solid vars.$alternativeColor;
+    }
+
+    .currencie:last-child {
+      border: none;
+    }
+  }
+
+}

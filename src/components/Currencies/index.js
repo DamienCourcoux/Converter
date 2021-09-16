@@ -1,15 +1,18 @@
+// == Import
+import './currencies.scss';
+
 // == Composant
 const Currencies = () => (
-  <div className="currencies">
-    <h2>Currencies</h2>
-    <ul>
-      <li>Australian Dollar</li>
-      <li>Australian Dollar</li>
-      <li>Australian Dollar</li>
-      <li>Australian Dollar</li>
-      <li>Australian Dollar</li>
+  <section className="currencies">
+    <h2 className="currencies__title">Currencies</h2>
+    <ul className="currencies__list">
+      <li className="currencie">Australian Dollar</li>
+      <li className="currencie">Australian Dollar</li>
+      <li className="currencie">Australian Dollar</li>
+      <li className="currencie">Australian Dollar</li>
+      <li className="currencie">Australian Dollar</li>
     </ul>
-  </div>
+  </section>
 );
 
 // == Export

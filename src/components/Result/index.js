@@ -1,9 +1,12 @@
+// == Import
+import './result.scss';
+
 // == Composant
 const Result = () => (
-  <div className="result">
-    <p>1.09</p>
-    <p>united States Dollar</p>
-  </div>
+  <section className="result">
+    <p className="price">1.09</p>
+    <p className="country">United States Dollar</p>
+  </section>
 );
 
 // == Export

@@ -2,7 +2,7 @@
 import Title from 'src/components/Title';
 import Currencies from 'src/components/Currencies';
 import Result from 'src/components/Result';
-import './styles.css';
+import './app.scss';
 
 // == Composant
 const App = () => (

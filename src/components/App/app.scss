@@ -1,0 +1,7 @@
+@use 'src/styles/vars';
+
+.app {
+  background: vars.$alternativeColor;
+  width: 300px;
+  padding: 0.8rem;
+}

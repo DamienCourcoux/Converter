@@ -1,0 +1,19 @@
+@use 'src/styles/vars';
+
+.result {
+  background: vars.$lightColor;
+  padding: 2rem;
+  text-align: center;
+  color: vars.$mainColor;
+
+  .price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .country {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+}

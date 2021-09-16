@@ -16,10 +16,16 @@
     color: vars.$mainColor;
     padding: 0.8rem;
     border-bottom: 1px solid vars.$alternativeColor;
+    background-color: vars.$lightColor;
   }
 
   &__item:last-child {
     border: none;
+  }
+
+  &__item:hover {
+    background-color: vars.$alternativeColor;
+    transition: background-color 1s ease 0.2s;
   }
   
 }

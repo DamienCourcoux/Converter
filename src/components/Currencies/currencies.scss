@@ -12,17 +12,14 @@
     border-bottom: 1px solid vars.$alternativeColor;
   }
 
-  &__list {
-
-    .currencie {
-      color: vars.$mainColor;
-      padding: 0.8rem;
-      border-bottom: 1px solid vars.$alternativeColor;
-    }
-
-    .currencie:last-child {
-      border: none;
-    }
+  &__item {
+    color: vars.$mainColor;
+    padding: 0.8rem;
+    border-bottom: 1px solid vars.$alternativeColor;
   }
 
+  &__item:last-child {
+    border: none;
+  }
+  
 }

@@ -7,7 +7,7 @@ const Currencies = ({ title, lists }) => (
   <section className="currencies">
     <h2 className="currencies__title">{ title }</h2>
     <ul className="currencies__list">
-      {lists.map((list) => <li key={list} className="currencies__item">{ list }</li>)}
+      {lists.map((list) => <li key={list.name} className="currencies__item">{ list.name }</li>)}
     </ul>
   </section>
 );
@@ -15,7 +15,12 @@ const Currencies = ({ title, lists }) => (
 // == PropTypes
 Currencies.propTypes = {
   title: PropTypes.string.isRequired,
-  lists: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  lists: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      rate: PropTypes.number,
+    }).isRequired,
+  ).isRequired,
 };
 
 // == Export

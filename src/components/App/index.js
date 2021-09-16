@@ -3,6 +3,7 @@ import Title from 'src/components/Title';
 import Currencies from 'src/components/Currencies';
 import Result from 'src/components/Result';
 import './app.scss';
+import currenciesData from 'src/data/currencies';
 
 // == Composant
 const App = () => (
@@ -13,7 +14,7 @@ const App = () => (
     />
     <Currencies
       title="Currencies"
-      lists={['Australian Dollar', 'Bulgarian Lev', 'Brazilian Real', 'Canadian Dollar', 'Swiss Franc']}
+      lists={currenciesData}
     />
     <Result
       price="1.09"

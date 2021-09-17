@@ -16,7 +16,7 @@
     color: vars.$mainColor;
     padding: 0.8rem;
     border-bottom: 1px solid vars.$alternativeColor;
-    background-color: vars.$lightColor;
+    transition: background 1s;
   }
 
   &__item:last-child {
@@ -24,8 +24,8 @@
   }
 
   &__item:hover {
-    background-color: vars.$alternativeColor;
-    transition: background-color 1s ease 0.2s;
+    background: vars.$alternativeColor;
+    transition: 0.2s;
   }
   
 }

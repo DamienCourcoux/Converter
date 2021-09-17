@@ -1,7 +1,31 @@
 @use 'src/styles/vars';
 
 .app {
-  background: vars.$alternativeColor;
   width: 300px;
-  padding: 0.8rem;
+  background: vars.$alternativeColor;
+  padding: 1rem;
+}
+
+.toggler {
+  position: relative;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  margin: -25px auto;
+  display: block;
+  border-radius: 50%;
+  border: 4px solid vars.$mainColor;
+  background-color: vars.$lightColor;
+  color: vars.$mainColor;
+  font-weight: bold;
+  font-size: 2em;
+  transition: transform 0.2s, background-color 0.2s;
+
+  &:hover {
+    background-color: vars.$alternativeColor;
+  }
+
+  &--open {
+    transform: rotate(90deg);
+  }
 }

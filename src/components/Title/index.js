@@ -9,7 +9,7 @@ const Title = ({ title, description }) => (
       { title }
     </h1>
     <p className="header__desc">
-      { description }
+      { description } euro
     </p>
   </header>
 );
@@ -17,7 +17,7 @@ const Title = ({ title, description }) => (
 // == PropTypes
 Title.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.number.isRequired,
 };
 
 // == Export

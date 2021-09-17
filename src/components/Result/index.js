@@ -12,7 +12,7 @@ const Result = ({ price, money }) => (
 
 // == PropTypes
 Result.propTypes = {
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   money: PropTypes.string.isRequired,
 };
 

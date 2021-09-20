@@ -18,17 +18,42 @@ class App extends React.Component {
 
     this.state = {
       isCurrenciesListOpen: true,
-      baseAmount: 1,
-      selectedCurrency: 'British Pound',
+      baseAmount: 0,
+      selectedCurrency: 'Mexican Peso',
+      searchValue: '',
     };
 
     this.handleToggleClick = this.handleToggleClick.bind(this);
     this.handleClickToCurrency = this.handleClickToCurrency.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleConverterChange = this.handleConverterChange.bind(this);
   }
 
-  handleClickToCurrency(event) {
+  componentDidMount() {
+    document.title = `Conversion de euro vers ${this.state.selectedCurrency}`;
+  }
+
+  componentDidUpdate(prepProps, prevState) {
+    if (prevState.selectedCurrency !== this.state.selectedCurrency) {
+      document.title = `Conversion de euro vers ${this.state.selectedCurrency}`;
+    }
+  }
+
+  handleConverterChange(event) {
     this.setState({
-      selectedCurrency: event.target.outerText,
+      baseAmount: parseInt(Number(event.target.value), 10),
+    });
+  }
+
+  handleSearchChange(event) {
+    this.setState({
+      searchValue: event.target.value,
+    });
+  }
+
+  handleClickToCurrency(currencySelected) {
+    this.setState({
+      selectedCurrency: currencySelected,
     });
   }
 
@@ -36,6 +61,21 @@ class App extends React.Component {
     this.setState({
       isCurrenciesListOpen: !this.state.isCurrenciesListOpen,
     });
+  }
+
+  getFilteredCurrencies() {
+    if (this.state.searchValue === '') {
+      return currenciesData;
+    }
+
+    const loweredSearch = this.state.searchValue.toLowerCase();
+
+    const filteredCurrencies = currenciesData.filter((currency) => {
+      const loweredCase = currency.name.toLowerCase();
+      return loweredCase.includes(loweredSearch);
+    });
+
+    return filteredCurrencies;
   }
 
   computeResult() {
@@ -58,12 +98,22 @@ class App extends React.Component {
         <Title
           title="Converter"
           description={this.state.baseAmount}
+          converterValue={this.state.baseAmount}
+          setConverterValue={this.handleConverterChange}
         />
         <Toggler
           isCurrenciesListOpen={this.state.isCurrenciesListOpen}
           handleToggleClick={this.handleToggleClick}
         />
-        {this.state.isCurrenciesListOpen && <Currencies title="Currencies" lists={currenciesData} handleClickToCurrency={this.handleClickToCurrency} />}
+        {this.state.isCurrenciesListOpen && (
+          <Currencies
+            title="Currencies"
+            lists={this.getFilteredCurrencies()}
+            handleClickToCurrency={this.handleClickToCurrency}
+            searchValue={this.state.searchValue}
+            setSearchValue={this.handleSearchChange}
+          />
+        )}
         <Result
           price={this.computeResult()}
           money={this.state.selectedCurrency}

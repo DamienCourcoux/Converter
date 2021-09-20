@@ -11,8 +11,26 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
+  
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
-  &__desc {
-    font-weight: 300;
+  &__container__desc {
+    color: vars.$lightColor;
+    width: 50%;
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid vars.$alternativeColor;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    // box-shadow: inset 0px 0px 5px 2px vars.$mainColor;
+
+    &::placeholder {
+      color: vars.$lightColor;
+    }
   }
 }

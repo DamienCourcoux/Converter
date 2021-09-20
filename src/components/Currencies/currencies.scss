@@ -2,14 +2,43 @@
 
 .currencies {
   background: vars.$lightColor;
-  height: 250px;
-  overflow-y: scroll;
 
   &__title {
     color: vars.$mainColor;
     font-weight: bold;
     padding: 1.5rem 0.8rem 0.8rem 0.8rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: vars.$lightColor;
+    color: #321005;
     border-bottom: 1px solid vars.$alternativeColor;
+
+    &:hover {
+      background: #ededed;
+    }
+  }
+
+  &__list {
+    height: 150px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ededed;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: vars.$mainColor;
+      height: 50px;
+    }
   }
 
   &__item {
